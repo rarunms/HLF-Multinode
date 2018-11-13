@@ -1,0 +1,1276 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "extensions_newuserscript_storageAccountName": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_storageAccountKey": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_commandToExecute": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_storageAccountName_1": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_storageAccountKey_1": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_commandToExecute_1": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_storageAccountName_2": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_storageAccountKey_2": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_commandToExecute_2": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_storageAccountName_3": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_storageAccountKey_3": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_newuserscript_commandToExecute_3": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "networkInterfaces_nic_ca0_name": {
+            "defaultValue": "nic-ca0",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_name": {
+            "defaultValue": "moduslzv3-LB",
+            "type": "String"
+        },
+        "networkInterfaces_nic_peer0_name": {
+            "defaultValue": "nic-peer0",
+            "type": "String"
+        },
+        "networkInterfaces_nic_peer1_name": {
+            "defaultValue": "nic-peer1",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_ca0_name": {
+            "defaultValue": "moduslzv3-ca0",
+            "type": "String"
+        },
+        "virtualNetworks_moduslzv3vnet_name": {
+            "defaultValue": "moduslzv3vnet",
+            "type": "String"
+        },
+        "networkInterfaces_nic_orderer0_name": {
+            "defaultValue": "nic-orderer0",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_peer0_name": {
+            "defaultValue": "moduslzv3-peer0",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_peer1_name": {
+            "defaultValue": "moduslzv3-peer1",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_orderer0_name": {
+            "defaultValue": "moduslzv3-orderer0",
+            "type": "String"
+        },
+        "networkSecurityGroups_moduslzv3nsg_name": {
+            "defaultValue": "moduslzv3nsg",
+            "type": "String"
+        },
+        "publicIPAddresses_moduslzv3_publicip_name": {
+            "defaultValue": "moduslzv3-publicip",
+            "type": "String"
+        },
+        "availabilitySets_moduslzv3fabricAvSet_name": {
+            "defaultValue": "moduslzv3fabricAvSet",
+            "type": "String"
+        },
+        "inboundNatRules_NATssh1_name": {
+            "defaultValue": "NATssh1",
+            "type": "String"
+        },
+        "inboundNatRules_NATssh3_name": {
+            "defaultValue": "NATssh3",
+            "type": "String"
+        },
+        "inboundNatRules_NATssh0_name": {
+            "defaultValue": "NATssh0",
+            "type": "String"
+        },
+        "inboundNatRules_NATssh2_name": {
+            "defaultValue": "NATssh2",
+            "type": "String"
+        },
+        "subnets_vqpv36xexc6zu_name": {
+            "defaultValue": "vqpv36xexc6zu",
+            "type": "String"
+        },
+        "extensions_newuserscript_name": {
+            "defaultValue": "newuserscript",
+            "type": "String"
+        },
+        "extensions_newuserscript_name_1": {
+            "defaultValue": "newuserscript",
+            "type": "String"
+        },
+        "extensions_newuserscript_name_2": {
+            "defaultValue": "newuserscript",
+            "type": "String"
+        },
+        "securityRules_allow_ssh_name": {
+            "defaultValue": "allow-ssh",
+            "type": "String"
+        },
+        "extensions_newuserscript_name_3": {
+            "defaultValue": "newuserscript",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_ca0_id": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/MODUSLINK/providers/Microsoft.Compute/disks/moduslzv3-ca0_OsDisk_1_7efd43f96fcc413dafca7bfb3f5117cf",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_orderer0_id": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/MODUSLINK/providers/Microsoft.Compute/disks/moduslzv3-orderer0_OsDisk_1_9c0f510d43c14a06bf264e55eaf231e9",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_peer0_id": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/MODUSLINK/providers/Microsoft.Compute/disks/moduslzv3-peer0_OsDisk_1_b04fd6a686ab48c9af4178c2099202a9",
+            "type": "String"
+        },
+        "virtualMachines_moduslzv3_peer1_id": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/disks/moduslzv3-peer1_OsDisk_1_96e9c4903ce6488eb781846f156e8481",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_id": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_id_1": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/backendAddressPools/LBBackendPool",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_id_2": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/probes/lbProbe1",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_id_3": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_id_4": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_id_5": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        },
+        "loadBalancers_moduslzv3_LB_id_6": {
+            "defaultValue": "/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/availabilitySets/moduslzv3fabricAvSet'.",
+            "type": "Microsoft.Compute/availabilitySets",
+            "sku": {
+                "name": "Aligned"
+            },
+            "name": "[parameters('availabilitySets_moduslzv3fabricAvSet_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "platformUpdateDomainCount": 2,
+                "platformFaultDomainCount": 2,
+                "virtualMachines": [
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_ca0_name'))]"
+                    },
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_orderer0_name'))]"
+                    },
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer0_name'))]"
+                    },
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer1_name'))]"
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_ca0_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_orderer0_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer0_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer1_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-ca0'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_moduslzv3_ca0_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_D1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "16.04.201801120"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_moduslzv3_ca0_name'),'_OsDisk_1_7efd43f96fcc413dafca7bfb3f5117cf')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_moduslzv3_ca0_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_moduslzv3_ca0_name')]",
+                    "adminUsername": "sysadmin",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_ca0_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_ca0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-orderer0'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_moduslzv3_orderer0_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_D1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "16.04.201801120"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_moduslzv3_orderer0_name'),'_OsDisk_1_9c0f510d43c14a06bf264e55eaf231e9')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_moduslzv3_orderer0_id')]"
+                        }
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_moduslzv3_orderer0_name')]",
+                    "adminUsername": "sysadmin",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_orderer0_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_orderer0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-peer0'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_moduslzv3_peer0_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_D1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "16.04.201801120"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_moduslzv3_peer0_name'),'_OsDisk_1_b04fd6a686ab48c9af4178c2099202a9')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "id": "[parameters('virtualMachines_moduslzv3_peer0_id')]"
+                        }
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_moduslzv3_peer0_name')]",
+                    "adminUsername": "sysadmin",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_peer0_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_peer0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-peer1'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_moduslzv3_peer1_name')]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_D1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "16.04.201801120"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_moduslzv3_peer1_name'),'_OsDisk_1_96e9c4903ce6488eb781846f156e8481')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "id": "[parameters('virtualMachines_moduslzv3_peer1_id')]"
+                        }
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_moduslzv3_peer1_name')]",
+                    "adminUsername": "sysadmin",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_peer1_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_moduslzv3fabricAvSet_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_peer1_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB'.",
+            "type": "Microsoft.Network/loadBalancers",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('loadBalancers_moduslzv3_LB_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "cb1f6085-9b73-4ff8-9666-e38a61bb5ac7",
+                "frontendIPConfigurations": [
+                    {
+                        "name": "LoadBalancerFrontEnd",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_moduslzv3_publicip_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "LBBackendPool",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [
+                    {
+                        "name": "LB-Rule1",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_moduslzv3_LB_id')]"
+                            },
+                            "frontendPort": 80,
+                            "backendPort": 3000,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false,
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_moduslzv3_LB_id_1')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_moduslzv3_LB_id_2')]"
+                            }
+                        }
+                    }
+                ],
+                "probes": [
+                    {
+                        "name": "lbProbe1",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 3000,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    }
+                ],
+                "inboundNatRules": [
+                    {
+                        "name": "NATssh1",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_moduslzv3_LB_id_3')]"
+                            },
+                            "frontendPort": 3001,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false
+                        }
+                    },
+                    {
+                        "name": "NATssh3",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_moduslzv3_LB_id_4')]"
+                            },
+                            "frontendPort": 3003,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false
+                        }
+                    },
+                    {
+                        "name": "NATssh0",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_moduslzv3_LB_id_5')]"
+                            },
+                            "frontendPort": 3000,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false
+                        }
+                    },
+                    {
+                        "name": "NATssh2",
+                        "etag": "W/\"b5746df8-d17d-4177-a82f-52d0c18c38c7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_moduslzv3_LB_id_6')]"
+                            },
+                            "frontendPort": 3002,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "enableTcpReset": false
+                        }
+                    }
+                ],
+                "outboundRules": [],
+                "inboundNatPools": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_moduslzv3_publicip_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/networkInterfaces/nic-ca0'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic_ca0_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "45fa07cc-ee8b-496c-9161-473305774637",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"0de12947-3354-4976-9ce9-36809b0b9af7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/backendAddressPools/LBBackendPool')]"
+                                }
+                            ],
+                            "loadBalancerInboundNatRules": [
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh0_name'))]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "lrvqcbvavorerhegxj5yzceabh.bx.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-19-66-42",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_ca0_name'))]"
+                },
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh0_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_ca0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/networkInterfaces/nic-orderer0'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic_orderer0_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "6681cf0a-f809-480c-a548-d94e4fd36d04",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"b1d817f1-b494-4309-9d90-a1e3ed074104\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.6",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/backendAddressPools/LBBackendPool')]"
+                                }
+                            ],
+                            "loadBalancerInboundNatRules": [
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh1_name'))]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_orderer0_name'))]"
+                },
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh1_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_orderer0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/networkInterfaces/nic-peer0'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic_peer0_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "1410b175-4b6c-43c1-b586-c97eab9cac3a",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"d0cc1afe-0ca9-4b55-82c3-410bf4aaa28a\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.7",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/backendAddressPools/LBBackendPool')]"
+                                }
+                            ],
+                            "loadBalancerInboundNatRules": [
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh2_name'))]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer0_name'))]"
+                },
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh2_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/networkInterfaces/nic-peer1'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_nic_peer1_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "5daa0824-a674-48c9-b0f6-4cd5753cd9ef",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"a154bc2a-0172-4284-9ad6-71fb9b7d2360\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.0.5",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/backendAddressPools/LBBackendPool')]"
+                                }
+                            ],
+                            "loadBalancerInboundNatRules": [
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh3_name'))]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer1_name'))]"
+                },
+                "tapConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_moduslzv3vnet_name'), parameters('subnets_vqpv36xexc6zu_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_moduslzv3_LB_name'), parameters('inboundNatRules_NATssh3_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer1_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/networkSecurityGroups/moduslzv3nsg'.",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[parameters('networkSecurityGroups_moduslzv3nsg_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "tags": {
+                "displayName": "Network Security Group"
+            },
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "cc67d8fb-58fc-4a4b-9156-2c698ddd4107",
+                "securityRules": [
+                    {
+                        "name": "allow-ssh",
+                        "etag": "W/\"a81cbd92-6513-4646-bc66-e21bce22a6f9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow SSH",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "22",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ],
+                "defaultSecurityRules": [
+                    {
+                        "name": "AllowVnetInBound",
+                        "etag": "W/\"a81cbd92-6513-4646-bc66-e21bce22a6f9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowAzureLoadBalancerInBound",
+                        "etag": "W/\"a81cbd92-6513-4646-bc66-e21bce22a6f9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from azure load balancer",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "AzureLoadBalancer",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllInBound",
+                        "etag": "W/\"a81cbd92-6513-4646-bc66-e21bce22a6f9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all inbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowVnetOutBound",
+                        "etag": "W/\"a81cbd92-6513-4646-bc66-e21bce22a6f9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowInternetOutBound",
+                        "etag": "W/\"a81cbd92-6513-4646-bc66-e21bce22a6f9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to Internet",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "Internet",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllOutBound",
+                        "etag": "W/\"a81cbd92-6513-4646-bc66-e21bce22a6f9\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all outbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ]
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/publicIPAddresses/moduslzv3-publicip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_moduslzv3_publicip_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "431994b7-172c-485f-a220-d093daea610f",
+                "ipAddress": "104.211.30.236",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "moduslzv3",
+                    "fqdn": "moduslzv3.eastus.cloudapp.azure.com"
+                },
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/virtualNetworks/moduslzv3vnet'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_moduslzv3vnet_name')]",
+            "apiVersion": "2018-08-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "06016b5c-aba0-48a2-9c86-ba7f8c88800f",
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/20"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "vqpv36xexc6zu",
+                        "etag": "W/\"507ad8b2-7104-4185-8d6b-1d4ce0045690\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.0.0.0/24",
+                            "networkSecurityGroup": {
+                                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_moduslzv3nsg_name'))]"
+                            },
+                            "delegations": []
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false,
+                "enableVmProtection": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_moduslzv3nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-ca0/extensions/newuserscript'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_moduslzv3_ca0_name'), '/', parameters('extensions_newuserscript_name'))]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://gallery.azure.com/artifact/20151001/microsoft-azure-blockchain.azure-blockchain-hyperledger-fabricsingle-member-hyperledger-fabric-consortium.1.0.2/Artifacts/scripts/configure.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_newuserscript_storageAccountName')]",
+                    "storageAccountKey": "[parameters('extensions_newuserscript_storageAccountKey')]",
+                    "commandToExecute": "[parameters('extensions_newuserscript_commandToExecute')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_ca0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-orderer0/extensions/newuserscript'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_moduslzv3_orderer0_name'), '/', parameters('extensions_newuserscript_name_3'))]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://gallery.azure.com/artifact/20151001/microsoft-azure-blockchain.azure-blockchain-hyperledger-fabricsingle-member-hyperledger-fabric-consortium.1.0.2/Artifacts/scripts/configure.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_newuserscript_storageAccountName_1')]",
+                    "storageAccountKey": "[parameters('extensions_newuserscript_storageAccountKey_1')]",
+                    "commandToExecute": "[parameters('extensions_newuserscript_commandToExecute_1')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_orderer0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-peer0/extensions/newuserscript'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_moduslzv3_peer0_name'), '/', parameters('extensions_newuserscript_name_1'))]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://gallery.azure.com/artifact/20151001/microsoft-azure-blockchain.azure-blockchain-hyperledger-fabricsingle-member-hyperledger-fabric-consortium.1.0.2/Artifacts/scripts/configure.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_newuserscript_storageAccountName_2')]",
+                    "storageAccountKey": "[parameters('extensions_newuserscript_storageAccountKey_2')]",
+                    "commandToExecute": "[parameters('extensions_newuserscript_commandToExecute_2')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Compute/virtualMachines/moduslzv3-peer1/extensions/newuserscript'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_moduslzv3_peer1_name'), '/', parameters('extensions_newuserscript_name_2'))]",
+            "apiVersion": "2018-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://gallery.azure.com/artifact/20151001/microsoft-azure-blockchain.azure-blockchain-hyperledger-fabricsingle-member-hyperledger-fabric-consortium.1.0.2/Artifacts/scripts/configure.sh"
+                    ]
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_newuserscript_storageAccountName_3')]",
+                    "storageAccountKey": "[parameters('extensions_newuserscript_storageAccountKey_3')]",
+                    "commandToExecute": "[parameters('extensions_newuserscript_commandToExecute_3')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_moduslzv3_peer1_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/inboundNatRules/NATssh1'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_moduslzv3_LB_name'), '/', parameters('inboundNatRules_NATssh1_name'))]",
+            "apiVersion": "2018-08-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/frontendIPConfigurations/LoadBalancerFrontEnd')]"
+                },
+                "frontendPort": 3001,
+                "backendPort": 22,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp",
+                "enableTcpReset": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/inboundNatRules/NATssh3'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_moduslzv3_LB_name'), '/', parameters('inboundNatRules_NATssh3_name'))]",
+            "apiVersion": "2018-08-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/frontendIPConfigurations/LoadBalancerFrontEnd')]"
+                },
+                "frontendPort": 3003,
+                "backendPort": 22,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp",
+                "enableTcpReset": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/inboundNatRules/NATssh0'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_moduslzv3_LB_name'), '/', parameters('inboundNatRules_NATssh0_name'))]",
+            "apiVersion": "2018-08-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/frontendIPConfigurations/LoadBalancerFrontEnd')]"
+                },
+                "frontendPort": 3000,
+                "backendPort": 22,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp",
+                "enableTcpReset": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/loadBalancers/moduslzv3-LB/inboundNatRules/NATssh2'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_moduslzv3_LB_name'), '/', parameters('inboundNatRules_NATssh2_name'))]",
+            "apiVersion": "2018-08-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name')), '/frontendIPConfigurations/LoadBalancerFrontEnd')]"
+                },
+                "frontendPort": 3002,
+                "backendPort": 22,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp",
+                "enableTcpReset": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_moduslzv3_LB_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/networkSecurityGroups/moduslzv3nsg/securityRules/allow-ssh'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_moduslzv3nsg_name'), '/', parameters('securityRules_allow_ssh_name'))]",
+            "apiVersion": "2018-08-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "description": "Allow SSH",
+                "protocol": "*",
+                "sourcePortRange": "*",
+                "destinationPortRange": "22",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 100,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_moduslzv3nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/22c4c0bb-a655-43d7-a76e-9a7f59e13750/resourceGroups/moduslink/providers/Microsoft.Network/virtualNetworks/moduslzv3vnet/subnets/vqpv36xexc6zu'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_moduslzv3vnet_name'), '/', parameters('subnets_vqpv36xexc6zu_name'))]",
+            "apiVersion": "2018-08-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.0.0.0/24",
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_moduslzv3nsg_name'))]"
+                },
+                "delegations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_moduslzv3vnet_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_moduslzv3nsg_name'))]"
+            ]
+        }
+    ]
+}
